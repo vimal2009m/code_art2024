@@ -75,7 +75,7 @@ pipeline {
                   --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
                   """
                   //Push image to ECR
-                  docker.push()
+                  docker.image("$CONTAINER_NAME").push()
               }
           }
         }
