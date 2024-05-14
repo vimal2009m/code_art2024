@@ -12,6 +12,7 @@ ARG REPO
 COPY . /
 
 #Manually configure the PIP client with the authenthication token
+RUN apt install python3-flask
 RUN pip config set global.index-url "https://aws:$CODEARTIFACT_TOKEN@$DOMAIN.d.codeartifact.$REGION.amazonaws.com/pypi/$REPO/simple/"
 RUN pip install -r requirements.txt
 
