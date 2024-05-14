@@ -66,7 +66,7 @@ pipeline {
             passwordVariable: 'AWS_SECRET_ACCESS_KEY',
             usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
 
-              docker.withRegistry('http://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com') {
+              docker.withRegistry('https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com') {
                 //Retrieve the Amazon ECR authenthication token, and use it to configure the Docker daemon
                 sh """
                   aws ecr get-login-password \
@@ -75,7 +75,7 @@ pipeline {
                   --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
                   """
                   //Push image to ECR
-                  docker.image("$BUILD_ID").push()
+                  docker.push()
               }
           }
         }
