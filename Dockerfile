@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-FROM python:3.7
+FROM python:3.8
 
 # Retrieve the arguments passed from the docker build command
 ARG CODEARTIFACT_TOKEN
