@@ -10,7 +10,7 @@ pipeline {
     AWS_CA_REPO = 'code-artf01'
     AWS_STACK_NAME = 'Consumer'
     CONTAINER_NAME = 'application'
-    CREDENTIALS_ID = 'jenkins' 
+    CREDENTIALS_ID = 'AWS_key' 
   }
   stages {
 
