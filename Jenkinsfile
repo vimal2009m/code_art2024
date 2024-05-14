@@ -65,7 +65,7 @@ pipeline {
           //Start a docker container based on the image and make sure it responds to HTTP requests
           docker.image('$CONTAINER_NAME:$BUILD_NUMBER').withRun('-p 5001:8080') { c ->
             sh 'sleep 5'
-            sh 'curl http://127.0.0.1:5000/ --verbose'
+            sh 'curl http://127.0.0.1:5001/ --verbose'
           }
         }
       }
